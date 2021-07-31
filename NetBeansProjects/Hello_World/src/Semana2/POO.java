@@ -113,11 +113,11 @@ public class POO {
         Estudiante est = new Estudiante("Miguel");  // Creo el Objeto est como tipo Estudiante.
         Estudiante student = new Estudiante("Miguel"); // Creo el Objeto student tipo Estudiante
         // Tengo dos objetos con elementos independientes copias exactas de la Clase estudiante (est y student)
-        est.nombre = "Miguel";
-        student.nombre = "Ana";
+        est.datosEstudiante("Miguel");
+        student.datosEstudiante("Ana");
         
         
-        System.out.println("Los estudiantes son: "+est.nombre+" y "+student.nombre);
+        System.out.println("Los estudiantes son: "+est.getNombre()+" y "+student.getNombre());
                 
                 
         String nom;
@@ -136,8 +136,8 @@ public class POO {
             est.datosEstudiante(nom);
             est.notasParciales(n1, n2);
             est.calcularDefinitva();
-            System.out.println("La nota definitiva del Estudiante " + est.nombre + " es: " + est.getDefinitiva());
-            System.out.println("El Estudiante " + est.nombre + " el estado de la asignatura es: " + est.imprimirMensaje() + "\n\n");
+            System.out.println("La nota definitiva del Estudiante " + est.getNombre() + " es: " + est.getDefinitiva());
+            System.out.println("El Estudiante " + est.getNombre() + " el estado de la asignatura es: " + est.imprimirMensaje() + "\n\n");
 
         }
     }

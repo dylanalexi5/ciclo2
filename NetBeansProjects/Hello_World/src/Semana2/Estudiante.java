@@ -30,7 +30,7 @@ METODOS SETTERs Y GETTERs (MODIFICADORES DE CLASE):
 Los Setters y Getters son métodos de acceso lo que indica que deben ser siempre visibles (públicos)
 y tienen un fin especifico:
 
-Setters: Establece valores iniciales a los atributos de la clase de forma explicita. Nunca
+Setters: Establece valores a los atributos de la clase de forma explicita. Nunca
 retorna valores por lo siempre es void y su acceso debe ser público para poder acceder a 
 atributos que se especifique en estos métodos.
 
@@ -40,6 +40,8 @@ y debe retornar siempre un valor (Especificando el tipo de valor a retornar).
 
 Static: Es una palabra reservada de JAVA que evita la generación de copias diferentes de 
 la clase en varios objetos.
+
+final: Es una palabra reservada que hace que una variable se comporte como una constante.
 
 Ejemplo:
 
@@ -54,7 +56,7 @@ package Semana2;
 
 public class Estudiante {
     
-    public static String nombre;
+    private static String nombre;
     private float nota1, nota2, definitiva=0; // solo es visible dentro de esta clase
     
     public Estudiante(String nom)  // Constructor 1: Se le asigna un valor al atributo nombre cuando se cree el objeto.
@@ -85,20 +87,32 @@ public class Estudiante {
         nota2 = n2;
     }
 
-    public String getNombre() {
+    public static String getNombre() {
         return nombre;
+    }
+
+    public static void setNombre(String nombre) {
+        Estudiante.nombre = nombre;
     }
 
     public float getNota1() {
         return nota1;
     }
 
+    public void setNota1(float nota1) {
+        this.nota1 = nota1;
+    }
+
     public float getNota2() {
         return nota2;
     }
 
+    public void setNota2(float nota2) {
+        this.nota2 = nota2;
+    }
 
-    
+
+
     public void calcularDefinitva()
     {
         definitiva = (nota1+nota2)/2;
